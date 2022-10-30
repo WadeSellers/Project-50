@@ -13,7 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if UserDefaults.standard.bool(forKey: "CurrentDayCount") {
+            // we have a value already, so do nothing
+        } else {
+            UserDefaults.standard.integer(forKey: "CurrentDayCount")
+        }
         return true
     }
 
